@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MusicStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light border-bottom ">
+            <div id="container">
+                <a class="navbar-brand" id="logo" asp-controller="Home" asp-action="Index">MusicStore</a>
+                <ul id="navlist">
+                    <li>
+                        <a href="/" class="text-dark">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Store/" class="text-dark">Store</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    @await Component.InvokeAsync("GenreMenu")
+    <div id="main" class="container">
+        <main class="pb-2">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer id="footer">
+        <div class="container">
+            &copy;2021 Babaev Nihad. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+    </html>
